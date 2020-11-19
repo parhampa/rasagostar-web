@@ -16,12 +16,18 @@ $ml = new mobile_input();
 $ml->check_token("atn", "mob", "token");
 $mobile = $ml->set_name("mob")
     ->set_title("شماره تماس")
-    ->set_important(true)
+    ->set_important(false)
     ->post_str();
+if ($mobile == "") {
+    die();
+}
 $kod_meli = $ml->set_name("id")
     ->set_title("کد ملی")
-    ->set_important(true)
+    ->set_important(false)
     ->post_str();
+if ($kod_meli == "") {
+    die();
+}
 $sql = "select * from `myfish` where `user`='$mobile' and `kod_meli` like '$kod_meli%'";
 $db = new database();
 $db->connect()->query($sql);

@@ -46,7 +46,7 @@
         <b class="w3-margin">درخواست ها</b>
         <a href="requests.php?action=show" class="w3-bar-item w3-button w3-padding w3-right-align"><i
                     class="fa fa-bullseye fa-fw"></i> 
-            مدیریت درخواست ها</a>
+            مدیریت درخواست ها(مالیات/لیست بیمه)</a>
         <a href="sabeghe_bime.php?action=show" class="w3-bar-item w3-button w3-padding w3-right-align"><i
                     class="fa fa-bullseye fa-fw"></i> 
             سوابق بیمه</a>

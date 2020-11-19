@@ -31,7 +31,11 @@ if ($db->res) {
         $file = str_replace("../", $web_url . "/", $fild['file']);
         ?>{"name":"<?php echo($fild['name']); ?>","family":"<?php echo($fild['family']); ?>","sh_sh":"<?php echo($fild['sh_sh']); ?>","tavalod":"<?php
         echo($fild['sal_b'] . "-" . $fild['mah_b'] . "-" . $fild['roz_b']); ?>","sh_meli":"<?php echo($fild['sh_meli']); ?>","mob":"<?php echo($fild['mob']); ?>",
-        "vaz":"<?php echo($fild['vaz']); ?>","file":"<?php echo($file); ?>"}<?php
+        "vaz":"<?php if ($fild['vaz'] == 0) {
+            echo("تایید نشده");
+        } else {
+            echo("تایید شده");
+        } ?>","file":"<?php echo($file); ?>"}<?php
         $countmsg++;
     }
     ?>]}<?php

@@ -60,9 +60,9 @@ include("nav.php");
             ->selectclasses("w3-select w3-border")
             ->selectaddval("0", "لیست بیمه")
             ->selectaddval("1", "مالیات")
-            ->selectaddval("2", "سابقه کار")
             ->end()
             ->sndform("req_type", 2, 1, "نوع درخواست", 1, 1);
+        //->selectaddval("2", "سابقه کار")
         $fm->label("وضعیت درخواست", "w3-text-green")
             ->select()
             ->selectname("vaz")
