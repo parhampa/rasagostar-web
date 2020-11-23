@@ -28,7 +28,7 @@ $kod_meli = $ml->set_name("id")
 if ($kod_meli == "") {
     die();
 }
-$sql = "select * from `myfish` where `user`='$mobile' and `kod_meli` like '$kod_meli%'";
+$sql = "select distinct(`kod_meli`) from `myfish` where `user`='$mobile' and `kod_meli` like '$kod_meli%'";
 $db = new database();
 $db->connect()->query($sql);
 ?>
