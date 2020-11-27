@@ -30,8 +30,26 @@ $fild = mysqli_fetch_assoc($db->res);
 <head></head>
 <body style="direction: rtl;">
 <br><br>
-<h1 style="font-family: Tahoma; font-weight: bold;">شماره شناسه برگ پرداخت + مبلغ پرداختی را بادقت یادداشت نمائید سپس
-    وارد مرحله پرداخت شوید</h1>
 <img src="../<?php echo($fild['file']); ?>" style="width: 100%;">
+<div style="text-align: right; width: 100%;">
+    <div style="width: 50%; margin-right: 50%;">
+        <h2 style="font-family: Tahoma; font-weight: bold;">جهت پرداخت فیش بیمه
+            <br>
+            شماره شناسه برگ پرداخت
+            <br>
+            مبلغ پرداختی
+            <br>
+            یاد داشت کنید
+            <br>
+            وارد مرحله پرداخت شوید</h2>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
 </body>
 </html>

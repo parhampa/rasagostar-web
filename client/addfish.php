@@ -30,7 +30,7 @@ $kod_meli = $ml->set_name("id")
 $db = new database();
 if ($kod_meli != "") {
     $tarikh = date("Y-m-d");
-    $filename = md5($mobile . $tarikh . ".jpg");
+    $filename = md5($mobile . $kod_meli . $tarikh . ".jpg");
     $fileaddr = "uploads/" . $filename . ".jpg";
     //die($url);
     $url = "http://www.0004320.ir/rasa/get-fish.php?id=" . $kod_meli . "&ver=" . rand(0, 999999999);
