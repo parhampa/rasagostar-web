@@ -22,7 +22,7 @@ $sql = "insert into `atn` (`mob`,`token`) VALUES ('$mob','$token')";
 $db = new database();
 $db->connect()->query($sql);
 if ($db->res) {
-    $url = "http://smspanel.Trez.ir/SendMessageWithUrl.ashx?Username=chamani4320&Password=123456789&PhoneNumber=30008638000100&MessageBody=" . $token . "&RecNumber=" . $mob . "&Smsclass=1";
+    $url = "http://smspanel.Trez.ir/SendMessageWithUrl.ashx?Username=user&Password=pass&PhoneNumber=line&MessageBody=" . $token . "&RecNumber=" . $mob . "&Smsclass=1";
     copy($url, "tmp.tmp");
     $ml->json_msg("1");
 } else {
