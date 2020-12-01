@@ -27,12 +27,19 @@ $db->connect()->query($sql);
 $fild = mysqli_fetch_assoc($db->res);
 ?>
 <html>
-<head></head>
+<head>
+    <script type="text/javascript">
+        function printImg() {
+            pwin = window.open(document.getElementById("mainImg").src,"_blank");
+            pwin.onload = function () {pwin.print();}
+        }
+    </script>
+</head>
 <body style="direction: rtl;">
 <br><br>
-<img src="../<?php echo($fild['file']); ?>" style="width: 100%;">
+<img src="../<?php echo($fild['file']); ?>" style="width: 100%;" id="mainImg">
 <div style="text-align: right; width: 100%;">
-    <div style="width: 50%; margin-right: 50%;">
+    <div style="width: 50%; margin-right: 55%;">
         <h2 style="font-family: Tahoma; font-weight: bold;">جهت پرداخت فیش بیمه
             <br>
             شماره شناسه برگ پرداخت
@@ -44,6 +51,9 @@ $fild = mysqli_fetch_assoc($db->res);
             وارد مرحله پرداخت شوید</h2>
     </div>
 </div>
+<br>
+<br>
+<input style="width: 100%; font-weight: bold; font-size: 22px; " type="button" value="چاپ فیش بیمه" onclick="printImg()">
 <br>
 <br>
 <br>
