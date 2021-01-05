@@ -28,13 +28,13 @@ if ($db->res) {
         if ($countmsg > 0) {
             echo(",");
         }
-        ?>{"title":"<?php echo($fild['title']); ?>","txt":"<?php echo($fild['txt']); ?>","address":"<?php echo($fild['address']); ?>","vaz":"<?php
+        ?>{"title":"<?php echo($fild['title']); ?>","txt":"<?php echo(preg_replace('/\s\s+/', " ",preg_replace( "/<br>|\n/", " ", $fild['txt']))); ?>","address":"<?php echo(preg_replace('/\s\s+/', " ",$fild['address'])); ?>","vaz":"<?php
         if ($fild['vaz'] == 0) {
             echo("در حال بررسی");
         } else {
             echo("انجام شده");
         }
-        ?>","dastmozd":"<?php echo($fild['dastmozd']); ?>","mazaya":"<?php echo($fild['mazaya']); ?>"}<?php
+        ?>","dastmozd":"<?php echo($fild['dastmozd']); ?>","mazaya":"<?php echo(preg_replace('/\s\s+/', " ", $fild['mazaya'])); ?>"}<?php
         $countmsg++;
     }
     ?>]}<?php

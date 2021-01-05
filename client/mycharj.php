@@ -27,7 +27,7 @@ while ($fild = mysqli_fetch_assoc($db->res)) {
     if ($count > 0) {
         echo(",");
     }
-    ?>{"price":"<?php echo($fild['price']); ?>","txt":"<?php echo($fild['txt']); ?>","peygiri":"<?php echo($fild['peygiri']); ?>","vaz":"<?php
+    ?>{"price":"<?php echo($fild['price']); ?>","txt":"<?php echo(preg_replace('/\s\s+/', " ",preg_replace( "/<br>|\n/", " ",$fild['txt']))); ?>","peygiri":"<?php echo($fild['peygiri']); ?>","vaz":"<?php
     if ($fild['vaz'] == 0) {
         echo("در حال بررسي");
     }

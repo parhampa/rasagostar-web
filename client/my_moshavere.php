@@ -28,7 +28,7 @@ if ($db->res) {
         if ($countmsg > 0) {
             echo(",");
         }
-        ?>{"txt":"<?php echo($fild['txt']); ?>","ans_txt":"<?php echo($fild['ans_txt']); ?>","vaz":"<?php echo($fild['vaz']); ?>"}<?php
+        ?>{"txt":"<?php echo(preg_replace('/\s\s+/', " ", preg_replace("/<br>|\n/", " ", $fild['txt']))); ?>","ans_txt":"<?php echo(preg_replace('/\s\s+/', " ", preg_replace("/<br>|\n/", " ", $fild['ans_txt']))); ?>","vaz":"<?php echo($fild['vaz']); ?>"}<?php
         $countmsg++;
     }
     ?>]}<?php

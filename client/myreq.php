@@ -18,7 +18,12 @@ $mob = $ml->set_name("mob")
     ->set_title("شماره تلفن همراه")
     ->set_important(true)
     ->post_str();
-$sql = "select * from `requests` where `mob`='$mob' order by `id` DESC ";
+$req_type = 99;
+$req_type = $ml->set_name("req_type")
+    ->set_title("نوع درخواست")
+    ->set_important(true)
+    ->post_int();
+$sql = "select * from `requests` where `mob`='$mob' and `req_type`=$req_type order by `id` desc";
 $db = new database();
 $db->connect()->query($sql);
 ?>{"list":[<?php
@@ -48,7 +53,7 @@ while ($fild = mysqli_fetch_assoc($db->res)) {
         echo("انجام شده");
     }
     $file = str_replace("../", $web_url . "/", $fild['file']);
-    ?>","txt":"<?php echo($fild['txt']); ?>","req_price":"<?php echo($fild['req_price']); ?>","file":"<?php echo($file); ?>"}<?php
+    ?>","txt":"<?php echo(preg_replace('/\s\s+/', " ",preg_replace( "/<br>|\n/", " ",$fild['txt']))); ?>","req_price":"<?php echo($fild['req_price']); ?>","file":"<?php echo($file); ?>"}<?php
     $count++;
 }
 ?>]}

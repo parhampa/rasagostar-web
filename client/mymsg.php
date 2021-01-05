@@ -28,7 +28,7 @@ if ($db->res) {
         if ($countmsg > 0) {
             echo(",");
         }
-        ?>{"txt":"<?php echo($fild['txt']); ?>","vaz":"<?php
+        ?>{"txt":"<?php echo(preg_replace('/\s\s+/', " ", preg_replace( "/<br>|\n/", " ",$fild['txt']))); ?>","vaz":"<?php
         switch ($fild['vaz']) {
             case 0:
                 echo("خوانده نشده");

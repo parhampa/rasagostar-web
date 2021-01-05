@@ -30,8 +30,10 @@ $fild = mysqli_fetch_assoc($db->res);
 <head>
     <script type="text/javascript">
         function printImg() {
-            pwin = window.open(document.getElementById("mainImg").src,"_blank");
-            pwin.onload = function () {pwin.print();}
+            pwin = window.open(document.getElementById("mainImg").src, "_blank");
+            pwin.onload = function () {
+                pwin.print();
+            }
         }
     </script>
 </head>
@@ -53,7 +55,13 @@ $fild = mysqli_fetch_assoc($db->res);
 </div>
 <br>
 <br>
-<input style="width: 100%; font-weight: bold; font-size: 22px; " type="button" value="چاپ فیش بیمه" onclick="printImg()">
+<input style="width: 100%; font-weight: bold; font-size: 22px; " type="button" value="چاپ فیش بیمه"
+       onclick="printImg()">
+<br>
+<br>
+<a href="https://sep.shaparak.ir/Purchase/tamin" target="_blank">
+    <input style="width: 100%; font-weight: bold; font-size: 22px; " type="button" value="پرداحت فیش بیمه">
+</a>
 <br>
 <br>
 <br>
