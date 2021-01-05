@@ -66,7 +66,7 @@ include("nav.php");
             ->areaname("ans_txt")
             ->areaid("ans_txt")
             ->end()
-            ->sndform("ans_txt", 0, 0, "متن پاسخ");
+            ->sndform("ans_txt", 0, 0, "متن پاسخ",1);
 
         $fm->label("وضعیت")
             ->select()
